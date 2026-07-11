@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Korven — Soluções de Software Sob Medida | B2B</title>
+  <meta name="description" content="A Korven desenvolve softwares personalizados para empresas que buscam escalar com tecnologia. Soluções B2B sob medida, com precisão e excelência." />
+  <meta name="keywords" content="desenvolvimento de software, software personalizado, B2B, sistemas empresariais, Korven" />
+  <meta property="og:title" content="Korven — Soluções de Software Sob Medida" />
+  <meta property="og:description" content="Transformamos a necessidade da sua empresa em tecnologia de alta performance." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Menu principal">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Korven - Início">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 16L16 4L28 16L16 28L4 16Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+            <path d="M10 16L16 10L22 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 10L16 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="logo-text">Korven</span>
+      </a>
+
+      <ul class="nav-links" role="list" id="nav-links">
+        <li><a href="#services" class="nav-link" data-i18n="nav.services">Serviços</a></li>
+        <li><a href="#why-us" class="nav-link" data-i18n="nav.why">Por que nós</a></li>
+        <li><a href="#process" class="nav-link" data-i18n="nav.process">Processo</a></li>
+        <li><a href="#contact" class="nav-cta" data-i18n="nav.contact">Falar com especialista</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <!-- Language Toggle -->
+        <button class="control-btn lang-btn" id="lang-toggle" aria-label="Trocar idioma" title="Switch language">
+          <span class="lang-flag" id="lang-flag">🇧🇷</span>
+          <span class="lang-label" id="lang-label">PT</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="control-btn theme-btn" id="theme-toggle" aria-label="Trocar tema">
+          <svg class="icon-sun" id="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="icon-moon" id="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu -->
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu mobile" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero" aria-label="Apresentação">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+      <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+      </div>
+    </div>
+
+    <div class="container hero-content">
+      <div class="hero-badge" data-i18n="hero.badge">
+        <span class="badge-dot"></span>
+        <span>Especialistas em Software B2B</span>
+      </div>
+
+      <h1 class="hero-title">
+        <span data-i18n="hero.title1">Seu negócio merece</span><br/>
+        <span class="hero-title-gradient" data-i18n="hero.title2">software sob medida</span>
+      </h1>
+
+      <p class="hero-subtitle" data-i18n="hero.subtitle">
+        Desenvolvemos sistemas personalizados que automatizam processos, aumentam a eficiência e impulsionam o crescimento da sua empresa — com tecnologia de alto nível e entrega ágil.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-primary" id="hero-cta-primary">
+          <span data-i18n="hero.cta1">Solicitar solução</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <a href="#services" class="btn btn-ghost" id="hero-cta-secondary">
+          <span data-i18n="hero.cta2">Ver serviços</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label" data-i18n="hero.stat1">Projetos entregues</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">98%</span>
+          <span class="stat-label" data-i18n="hero.stat2">Satisfação dos clientes</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">5+</span>
+          <span class="stat-label" data-i18n="hero.stat3">Anos de experiência</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <section class="trusted" aria-label="Empresas parceiras">
+    <div class="container">
+      <p class="trusted-label" data-i18n="trusted.label">Confiado por empresas que buscam excelência tecnológica</p>
+      <div class="trusted-logos">
+        <div class="trust-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span data-i18n="trust.secure">Segurança Garantida</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          <span data-i18n="trust.certified">ISO Certificado</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="trust.support">Suporte 24/7</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <span data-i18n="trust.team">Time Dedicado</span>
+        </div>
+        <div class="trust-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <span data-i18n="trust.agile">Entrega Ágil</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services section" id="services" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="services.tag">O que fazemos</div>
+        <h2 class="section-title" id="services-heading" data-i18n="services.title">Soluções completas para sua empresa crescer</h2>
+        <p class="section-subtitle" data-i18n="services.subtitle">Cada projeto é único. Desenvolvemos com base nas necessidades reais do seu negócio.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card service-card-featured" id="service-custom">
+          <div class="service-card-glow"></div>
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+            </svg>
+          </div>
+          <h3 class="service-title" data-i18n="service1.title">Sistemas Personalizados</h3>
+          <p class="service-desc" data-i18n="service1.desc">Desenvolvemos sistemas sob medida para os fluxos únicos da sua empresa. Desde ERPs internos até plataformas complexas de gestão.</p>
+          <ul class="service-features">
+            <li data-i18n="service1.f1">ERP & CRM Customizados</li>
+            <li data-i18n="service1.f2">Painéis de Gestão (Dashboards)</li>
+            <li data-i18n="service1.f3">Automação de Processos</li>
+          </ul>
+          <div class="service-arrow" aria-hidden="true">→</div>
+        </article>
+
+        <article class="service-card" id="service-web">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3 class="service-title" data-i18n="service2.title">Plataformas Web</h3>
+          <p class="service-desc" data-i18n="service2.desc">Aplicações web de alta performance, seguras e escaláveis, prontas para milhares de usuários simultâneos.</p>
+          <ul class="service-features">
+            <li data-i18n="service2.f1">SaaS Multi-tenant</li>
+            <li data-i18n="service2.f2">Portais B2B & B2C</li>
+            <li data-i18n="service2.f3">APIs & Integrações</li>
+          </ul>
+        </article>
+
+        <article class="service-card" id="service-mobile">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="service-title" data-i18n="service3.title">Aplicativos Mobile</h3>
+          <p class="service-desc" data-i18n="service3.desc">Apps iOS e Android nativos ou híbridos que conectam sua empresa com clientes e equipes em qualquer lugar.</p>
+          <ul class="service-features">
+            <li data-i18n="service3.f1">iOS & Android</li>
+            <li data-i18n="service3.f2">Apps de Gestão Interna</li>
+            <li data-i18n="service3.f3">Push Notifications</li>
+          </ul>
+        </article>
+
+        <article class="service-card" id="service-integration">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/>
+              <polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/>
+              <line x1="4" y1="4" x2="9" y2="9"/>
+            </svg>
+          </div>
+          <h3 class="service-title" data-i18n="service4.title">Integrações & APIs</h3>
+          <p class="service-desc" data-i18n="service4.desc">Conectamos seus sistemas existentes, eliminando silos de dados e criando um ecossistema digital integrado.</p>
+          <ul class="service-features">
+            <li data-i18n="service4.f1">Integração com ERPs</li>
+            <li data-i18n="service4.f2">APIs RESTful & GraphQL</li>
+            <li data-i18n="service4.f3">Automação via Webhooks</li>
+          </ul>
+        </article>
+
+        <article class="service-card" id="service-data">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
+            </svg>
+          </div>
+          <h3 class="service-title" data-i18n="service5.title">Dados & Analytics</h3>
+          <p class="service-desc" data-i18n="service5.desc">Transformamos dados brutos em inteligência estratégica. Dashboards executivos, relatórios e análises preditivas.</p>
+          <ul class="service-features">
+            <li data-i18n="service5.f1">Business Intelligence</li>
+            <li data-i18n="service5.f2">Relatórios Automáticos</li>
+            <li data-i18n="service5.f3">Análise Preditiva com IA</li>
+          </ul>
+        </article>
+
+        <article class="service-card" id="service-infra">
+          <div class="service-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+            </svg>
+          </div>
+          <h3 class="service-title" data-i18n="service6.title">Infraestrutura Cloud</h3>
+          <p class="service-desc" data-i18n="service6.desc">Arquitetura cloud escalável, segura e resiliente. Deploy automatizado, monitoramento e alta disponibilidade.</p>
+          <ul class="service-features">
+            <li data-i18n="service6.f1">AWS / GCP / Azure</li>
+            <li data-i18n="service6.f2">DevOps & CI/CD</li>
+            <li data-i18n="service6.f3">Segurança & Compliance</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="why-us section" id="why-us" aria-labelledby="why-heading">
+    <div class="why-bg">
+      <div class="why-glow"></div>
+    </div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="why.tag">Diferenciais</div>
+        <h2 class="section-title" id="why-heading" data-i18n="why.title">Por que escolher a Korven?</h2>
+        <p class="section-subtitle" data-i18n="why.subtitle">Não somos uma software house genérica. Somos parceiros estratégicos comprometidos com o sucesso do seu negócio.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card" id="why-precision">
+          <div class="why-number">01</div>
+          <h3 class="why-title" data-i18n="why1.title">Precisão Técnica</h3>
+          <p class="why-desc" data-i18n="why1.desc">Código limpo, arquitetura robusta e boas práticas de engenharia em cada linha. Zero gambiarras, 100% escalável.</p>
+        </div>
+        <div class="why-card" id="why-transparency">
+          <div class="why-number">02</div>
+          <h3 class="why-title" data-i18n="why2.title">Transparência Total</h3>
+          <p class="why-desc" data-i18n="why2.desc">Você acompanha cada etapa do desenvolvimento. Reuniões semanais, relatórios detalhados e acesso ao progresso em tempo real.</p>
+        </div>
+        <div class="why-card" id="why-delivery">
+          <div class="why-number">03</div>
+          <h3 class="why-title" data-i18n="why3.title">Entrega no Prazo</h3>
+          <p class="why-desc" data-i18n="why3.desc">98% dos nossos projetos são entregues dentro do prazo estabelecido. Planejamento rigoroso e metodologia ágil comprovada.</p>
+        </div>
+        <div class="why-card" id="why-partnership">
+          <div class="why-number">04</div>
+          <h3 class="why-title" data-i18n="why4.title">Parceria de Longo Prazo</h3>
+          <p class="why-desc" data-i18n="why4.desc">Não entregamos e sumimos. Oferecemos suporte contínuo, manutenção e evolução do sistema conforme seu negócio cresce.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process section" id="process" aria-labelledby="process-heading">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="process.tag">Como funciona</div>
+        <h2 class="section-title" id="process-heading" data-i18n="process.title">Do briefing ao deploy em etapas claras</h2>
+      </div>
+
+      <div class="process-steps">
+        <div class="process-step" id="step-1">
+          <div class="step-number" aria-hidden="true">01</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step1.title">Entendimento</h3>
+            <p class="step-desc" data-i18n="step1.desc">Reunião de briefing para mapear sua necessidade, objetivos e contexto do negócio.</p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step" id="step-2">
+          <div class="step-number" aria-hidden="true">02</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step2.title">Proposta</h3>
+            <p class="step-desc" data-i18n="step2.desc">Elaboramos uma proposta técnica detalhada com escopo, prazo e investimento.</p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step" id="step-3">
+          <div class="step-number" aria-hidden="true">03</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step3.title">Desenvolvimento</h3>
+            <p class="step-desc" data-i18n="step3.desc">Sprints ágeis com entregas incrementais e feedback constante da sua parte.</p>
+          </div>
+        </div>
+
+        <div class="process-connector" aria-hidden="true"></div>
+
+        <div class="process-step" id="step-4">
+          <div class="step-number" aria-hidden="true">04</div>
+          <div class="step-content">
+            <div class="step-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+            </div>
+            <h3 class="step-title" data-i18n="step4.title">Deploy & Suporte</h3>
+            <p class="step-desc" data-i18n="step4.desc">Lançamento assistido, treinamento da equipe e suporte contínuo pós-entrega.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="contact section" id="contact" aria-labelledby="contact-heading">
+    <div class="contact-bg">
+      <div class="contact-glow"></div>
+    </div>
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-info">
+          <div class="section-tag" data-i18n="contact.tag">Vamos conversar</div>
+          <h2 class="section-title" id="contact-heading" data-i18n="contact.title">Pronto para transformar sua empresa com tecnologia?</h2>
+          <p class="contact-desc" data-i18n="contact.desc">Preencha o formulário e nossa equipe entrará em contato em até 24 horas com uma análise inicial do seu projeto.</p>
+
+          <div class="contact-highlights">
+            <div class="contact-highlight" id="highlight-response">
+              <div class="highlight-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="highlight1.title">Resposta em 24h</strong>
+                <p data-i18n="highlight1.desc">Análise técnica inicial sem custo</p>
+              </div>
+            </div>
+            <div class="contact-highlight" id="highlight-nda">
+              <div class="highlight-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="highlight2.title">NDA Garantido</strong>
+                <p data-i18n="highlight2.desc">Sigilo total sobre seu projeto</p>
+              </div>
+            </div>
+            <div class="contact-highlight" id="highlight-free">
+              <div class="highlight-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+                </svg>
+              </div>
+              <div>
+                <strong data-i18n="highlight3.title">Consulta Gratuita</strong>
+                <p data-i18n="highlight3.desc">Sem compromisso inicial</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group" id="fg-name">
+                <label for="contact-name" data-i18n="form.name">Nome completo</label>
+                <input type="text" id="contact-name" name="name" required autocomplete="name"
+                  data-i18n-placeholder="form.name_ph" placeholder="Seu nome completo" />
+                <span class="field-error" id="err-name" role="alert"></span>
+              </div>
+              <div class="form-group" id="fg-company">
+                <label for="contact-company" data-i18n="form.company">Empresa</label>
+                <input type="text" id="contact-company" name="company" required autocomplete="organization"
+                  data-i18n-placeholder="form.company_ph" placeholder="Nome da sua empresa" />
+                <span class="field-error" id="err-company" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group" id="fg-email">
+                <label for="contact-email" data-i18n="form.email">E-mail corporativo</label>
+                <input type="email" id="contact-email" name="email" required autocomplete="email"
+                  data-i18n-placeholder="form.email_ph" placeholder="seu@empresa.com" />
+                <span class="field-error" id="err-email" role="alert"></span>
+              </div>
+              <div class="form-group" id="fg-phone">
+                <label for="contact-phone" data-i18n="form.phone">Telefone / WhatsApp</label>
+                <input type="tel" id="contact-phone" name="phone" autocomplete="tel"
+                  data-i18n-placeholder="form.phone_ph" placeholder="+55 (11) 99999-9999" />
+              </div>
+            </div>
+
+            <div class="form-group" id="fg-segment">
+              <label for="contact-segment" data-i18n="form.segment">Segmento da empresa</label>
+              <select id="contact-segment" name="segment" required>
+                <option value="" data-i18n="form.segment_ph">Selecione o segmento</option>
+                <option value="retail" data-i18n="seg.retail">Varejo & E-commerce</option>
+                <option value="finance" data-i18n="seg.finance">Finanças & Fintech</option>
+                <option value="health" data-i18n="seg.health">Saúde & Healthtech</option>
+                <option value="education" data-i18n="seg.education">Educação & Edtech</option>
+                <option value="logistics" data-i18n="seg.logistics">Logística & Supply Chain</option>
+                <option value="industry" data-i18n="seg.industry">Indústria & Manufatura</option>
+                <option value="services" data-i18n="seg.services">Serviços Profissionais</option>
+                <option value="other" data-i18n="seg.other">Outro</option>
+              </select>
+              <span class="field-error" id="err-segment" role="alert"></span>
+            </div>
+
+            <div class="form-group" id="fg-project">
+              <label for="contact-project" data-i18n="form.project">Tipo de projeto</label>
+              <select id="contact-project" name="project_type" required>
+                <option value="" data-i18n="form.project_ph">Selecione o tipo de projeto</option>
+                <option value="system" data-i18n="proj.system">Sistema / Software interno</option>
+                <option value="web_app" data-i18n="proj.web_app">Aplicação Web / SaaS</option>
+                <option value="mobile" data-i18n="proj.mobile">Aplicativo Mobile</option>
+                <option value="api" data-i18n="proj.api">API & Integrações</option>
+                <option value="dashboard" data-i18n="proj.dashboard">Dashboard / BI</option>
+                <option value="automation" data-i18n="proj.automation">Automação de Processos</option>
+                <option value="other" data-i18n="proj.other">Outro</option>
+              </select>
+              <span class="field-error" id="err-project" role="alert"></span>
+            </div>
+
+            <div class="form-group" id="fg-message">
+              <label for="contact-message" data-i18n="form.message">Descreva seu projeto</label>
+              <textarea id="contact-message" name="message" rows="5" required
+                data-i18n-placeholder="form.message_ph"
+                placeholder="Conte sobre o problema que precisa resolver, funcionalidades desejadas, prazo e qualquer outro detalhe relevante..."></textarea>
+              <span class="field-error" id="err-message" role="alert"></span>
+            </div>
+
+            <div class="form-group form-checkbox" id="fg-terms">
+              <label class="checkbox-label" for="contact-terms">
+                <input type="checkbox" id="contact-terms" name="terms" required />
+                <span class="checkmark"></span>
+                <span data-i18n="form.terms">Concordo com a <a href="#" class="form-link">Política de Privacidade</a> e autorizo o contato da Korven.</span>
+              </label>
+              <span class="field-error" id="err-terms" role="alert"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              <span class="btn-text" data-i18n="form.submit">Enviar solicitação</span>
+              <span class="btn-loading" aria-hidden="true">
+                <svg class="spin" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 12a9 9 0 1 1-6.219-8.56"/>
+                </svg>
+              </span>
+            </button>
+
+            <div class="form-success" id="form-success" role="alert" aria-live="polite">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              <div>
+                <strong data-i18n="form.success_title">Solicitação enviada com sucesso!</strong>
+                <p data-i18n="form.success_desc">Nossa equipe entrará em contato em até 24 horas. Fique atento ao seu e-mail!</p>
+              </div>
+            </div>
+
+            <div class="form-error-global" id="form-error-global" role="alert" aria-live="polite">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              <span data-i18n="form.error_global">Erro ao enviar. Tente novamente ou nos contate pelo e-mail.</span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <a href="#hero" class="nav-logo" aria-label="Korven - Início">
+            <div class="logo-icon">
+              <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 16L16 4L28 16L16 28L4 16Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+                <path d="M10 16L16 10L22 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 10L16 22" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <span class="logo-text">Korven</span>
+          </a>
+          <p class="footer-tagline" data-i18n="footer.tagline">Transformando negócios através da tecnologia.</p>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.company">Empresa</h4>
+          <ul role="list">
+            <li><a href="#services" data-i18n="nav.services">Serviços</a></li>
+            <li><a href="#why-us" data-i18n="nav.why">Por que nós</a></li>
+            <li><a href="#process" data-i18n="nav.process">Processo</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-group">
+          <h4 data-i18n="footer.contact">Contato</h4>
+          <ul role="list">
+            <li><a href="mailto:korven.comercial@gmail.com.br">korven.comercial@gmail.com.br</a></li>
+            <li><a href="https://wa.me/5561991824748" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.copy">© 2025 Korven. Todos os direitos reservados.</p>
+        <p class="footer-sub" data-i18n="footer.sub">Desenvolvido com precisão e excelência.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
