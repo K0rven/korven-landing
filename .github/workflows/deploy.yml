@@ -1,0 +1,110 @@
+name: Deploy Atlas Landing
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Validar HTML (lint básico)
+        run: |
+          if ! command -v tidy &> /dev/null; then
+            sudo apt-get update && sudo apt-get install -y tidy
+          fi
+          tidy -q -e index.html || true
+        continue-on-error: true
+
+      - name: Testar build da imagem Docker
+        run: docker build -t atlas-landing:test .
+
+  deploy-staging:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Copiar arquivos para VPS (staging)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: "."
+          target: "~/atlas-landing-staging-deploy"
+          strip_components: 0
+
+      - name: Build e restart container de staging
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            cd ~/atlas-landing-staging-deploy
+            docker build -t atlas-landing:staging .
+            docker stop atlas-landing-staging || true
+            docker rm atlas-landing-staging || true
+            docker run -d --name atlas-landing-staging --restart unless-stopped -p 127.0.0.1:8083:80 atlas-landing:staging
+
+      - name: Smoke test (staging)
+        run: |
+          sleep 5
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://staging-atlas.korven.eng.br)
+          if [ "$STATUS" -ne 200 ]; then
+            echo "Staging retornou status $STATUS, esperado 200"
+            exit 1
+          fi
+          echo "Staging OK: $STATUS"
+
+  deploy-production:
+    needs: deploy-staging
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Copiar arquivos para VPS (produção)
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          source: "."
+          target: "~/BotAtlas"
+          strip_components: 0
+
+      - name: Build e restart container de produção
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            cd ~/BotAtlas
+            docker build -t atlas-landing .
+            docker stop atlas-landing || true
+            docker rm atlas-landing || true
+            docker run -d --name atlas-landing --restart unless-stopped -p 127.0.0.1:8081:80 atlas-landing
+
+      - name: Smoke test (produção)
+        run: |
+          sleep 5
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://atlas.korven.eng.br)
+          if [ "$STATUS" -ne 200 ]; then
+            echo "Produção retornou status $STATUS, esperado 200"
+            exit 1
+          fi
+          echo "Produção OK: $STATUS"
