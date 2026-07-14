@@ -10,7 +10,7 @@
      ============================================================ */
   const CONFIG = {
     // ⚠️ IMPORTANTE: Substitua pela URL do seu webhook do n8n
-    WEBHOOK_URL: 'https://your-n8n-instance.example.com/webhook/korven-contact',
+    WEBHOOK_URL: 'https://n8n.korven.eng.br/webhook/korven',
     FORM_SUCCESS_HIDE_DELAY: 8000,
   };
 
